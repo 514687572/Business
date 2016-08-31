@@ -1,0 +1,89 @@
+Applications Graphics Acceleration Info:
+Uptime: 56135 Realtime: 56135
+
+** Graphics info for pid 2212 [com.yuguo.business] **
+
+Recent DisplayList operations
+              ClipRect
+              DrawRenderNode
+              RestoreToCount
+          DrawRenderNode
+          DrawRenderNode
+          DrawRenderNode
+    RestoreToCount
+RestoreToCount
+DrawRect
+DrawBitmapRect
+DrawRect
+DrawPath
+DrawPath
+Save
+DrawRenderNode
+  DrawRenderNode
+    DrawRect
+  DrawRenderNode
+    Save
+    ClipRect
+    DrawRenderNode
+      DrawRenderNode
+        DrawRenderNode
+          DrawBitmapRect
+        DrawRenderNode
+        DrawRenderNode
+          DrawRenderNode
+            DrawRect
+          DrawRenderNode
+            DrawRenderNode
+              DrawPath
+              DrawPath
+            DrawRenderNode
+            DrawRenderNode
+              Save
+              ClipRect
+              DrawPath
+              DrawRenderNode
+              RestoreToCount
+          DrawRenderNode
+          DrawRenderNode
+          DrawRenderNode
+    RestoreToCount
+RestoreToCount
+DrawRect
+DrawBitmapRect
+DrawRect
+DrawPath
+DrawPath
+DrawPath
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache           835396 / 25165824
+  LayerCache                  0 / 16777216 (numLayers = 0)
+  Layers total          0 (numLayers = 0)
+  RenderBufferCache           0 /  2097152
+  GradientCache               0 /   524288
+  PathCache              379349 / 10485760
+  TessellationCache           0 /  1048576
+  TextDropShadowCache         0 /  2097152
+  PatchCache                  0 /   131072
+  FontRenderer 0 A8      524288 /   524288
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total   524288 /   524288
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  1739033 bytes, 1.66 MB
+
+Profile data in ms:
+
+	com.yuguo.business/com.yuguo.business.view.impl.LoginActivity/android.view.ViewRootImpl@1ee704be (visibility=0)
+View hierarchy:
+
+  com.yuguo.business/com.yuguo.business.view.impl.LoginActivity/android.view.ViewRootImpl@1ee704be
+  17 views, 22.70 kB of display lists
+
+
+Total ViewRootImpl: 1
+Total Views:        17
+Total DisplayList:  22.70 kB
+
