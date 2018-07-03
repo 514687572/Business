@@ -6,17 +6,9 @@
     android:background="@drawable/mert_bg"
     >
 
-    <ImageView
-        android:id="@+id/imageViewLogin"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@drawable/mert_logo"
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="400dp"
         android:orientation="vertical" 
         android:background="#a1ffffff"
         android:gravity="center"

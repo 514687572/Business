@@ -1,12 +1,8 @@
 <resources>
 
-    <string name="app_name">yuguoBusiness</string>
+    <string name="app_name">Business</string>
     <string name="mert_name">账号</string>
     <string name="mert_pwd">密码</string>
-    <string name="ordercenter">订单中心</string>
-    <string name="receiveorders">接单</string>
-    <string name="cancel">取消</string>
-    <string name="delivergoods">发货</string>
     <string name="loginButton">登录</string>
     <string name="forgetPw">忘记密码</string>
     
