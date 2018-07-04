@@ -5,6 +5,10 @@
     <string name="mert_pwd">密码</string>
     <string name="loginButton">登录</string>
     <string name="forgetPw">忘记密码</string>
+    <string name="taskUrl">任务链接</string>
+    <string name="taskCount">任务数量</string>
+    <string name="taskStatus">任务状态</string>
+    <string name="delete">删  除</string>
     
     
 

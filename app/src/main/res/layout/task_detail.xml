@@ -8,34 +8,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="#a1ffffff"
-        android:gravity="center"
-        android:layout_marginTop="30dp"
-        >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:textSize="20dp"
-            android:text="管理员登录"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:orientation="vertical" 
-        android:background="#a1ffffff"
-        android:gravity="center"
-        android:layout_marginTop="80dp"
         >
 
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/linearlayout_border"
             android:orientation="horizontal" >
 
             <TextView
@@ -44,12 +25,12 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="15dp"
                 android:gravity="center_vertical"
-                android:text="@string/mert_name"
+                android:text="@string/taskUrl"
                 android:textColor="@color/appmaincolor"
                 android:textSize="12sp" />
 
-            <EditText
-                android:id="@+id/mch_Account"
+            <TextView
+                android:id="@+id/tex_taskUrl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -60,14 +41,13 @@
                 android:ems="10" >
 
                 <requestFocus />
-            </EditText>
+            </TextView>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:background="@drawable/linearlayout_border"
             android:orientation="horizontal" >
 
             <TextView
@@ -76,12 +56,12 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="15dp"
                 android:gravity="center_vertical"
-                android:text="@string/mert_pwd"
+                android:text="@string/taskCount"
                 android:textColor="@color/appmaincolor"
                 android:textSize="12sp" />
 
-            <EditText
-                android:id="@+id/mch_password"
+            <TextView
+                android:id="@+id/tex_taskCount"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -89,28 +69,51 @@
                 android:layout_marginRight="14dp"
                 android:layout_weight="1"
                 android:background="@null"
-                android:ems="10"
-                android:inputType="textPassword" />
+                android:ems="10" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:background="@drawable/linearlayout_border"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textViewStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/taskStatus"
+                android:textColor="@color/appmaincolor"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tex_taskStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="14dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:ems="10" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
             android:orientation="horizontal" >
 
             <Button
-                android:id="@+id/buttonLogin"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:background="@drawable/button"
-                android:text="@string/loginButton"
-                android:textColor="#ffffff"
-                android:drawableTop="@drawable/button_selector"
-                android:textSize="14sp" />
+                android:layout_width="200px"
+                android:layout_height="80px"
+                android:background="@color/appmaincolor"
+                android:id="@+id/deleteButton"
+                android:text="@string/delete"/>
         </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>

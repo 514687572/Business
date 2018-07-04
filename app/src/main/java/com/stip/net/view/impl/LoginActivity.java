@@ -7,7 +7,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.stip.net.bean.StipResponse;
+import com.stip.net.base.StipResponse;
 import com.stip.net.utils.ConstantUtils;
 import com.stip.net.utils.StringUtils;
 import com.stip.net.utils.ToastUtils;
@@ -76,8 +76,9 @@ public class LoginActivity extends Activity implements ILoginView {
      */
 	public void onResponse(StipResponse response){
 		if(ConstantUtils.SUCCESS_STATUS==response.isSuccess()){
+			ToastUtils.showLong(LoginActivity.this, "登录成功");
 			Intent intent = new Intent();
-			//intent.setClass(LoginActivity.this,OrderCenterActivity.class);
+			intent.setClass(LoginActivity.this,IndexActivity.class);
 			startActivity(intent);
 		}else if(ConstantUtils.FAILURE_STATUS==response.isSuccess()){
 			ToastUtils.showLong(LoginActivity.this, "用户名或密码有误");

@@ -1,5 +1,6 @@
 package com.stip.net.utils;
 
+import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
@@ -102,6 +103,7 @@ public class StipRequest<T> extends Request<T>{
             T result;
             String jsonStr = new String(response.data,HttpHeaderParser.parseCharset(response.headers));
             result = gson.fromJson(jsonStr, mType);
+
             return Response.success(result,HttpHeaderParser.parseCacheHeaders(response));
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();

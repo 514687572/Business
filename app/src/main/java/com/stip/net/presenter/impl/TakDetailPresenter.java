@@ -4,46 +4,50 @@ import com.android.volley.VolleyError;
 import com.google.gson.reflect.TypeToken;
 import com.stip.net.base.StipResponse;
 import com.stip.net.presenter.ILoginPresenter;
+import com.stip.net.presenter.ITaskDetailPresenter;
 import com.stip.net.utils.ConstantUtils;
 import com.stip.net.utils.HttpUtils;
 import com.stip.net.utils.StipRequest;
 import com.stip.net.utils.ToastUtils;
 import com.stip.net.utils.VolleyErrorHelper;
 import com.stip.net.view.ILoginView;
+import com.stip.net.view.ITaskDetailView;
 import com.stip.net.view.impl.LoginActivity;
+import com.stip.net.view.impl.TaskDetailActivity;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
+import java.util.Map;
 
 import javax.inject.Inject;
 
 /**
  * Created by C on 2016/8/22.
  */
-public class LoginPresenter implements ILoginPresenter {
-    private ILoginView loginView;
+public class TakDetailPresenter implements ITaskDetailPresenter {
+    private ITaskDetailView taskDetailView;
 
     @Inject
-    public LoginPresenter() {
+    public TakDetailPresenter() {
     }
 
     @Override
-    public void login(final LoginActivity loginActivity,HashMap<String, String> params) {
+    public void delete(final TaskDetailActivity taskDetailActivity, Map<String, String> params) {
         StipRequest.ResponeListener<StipResponse> responseListener=new StipRequest.ResponeListener<StipResponse>(){
             @Override
             public void onErrorResponse(VolleyError error) {
-                String errorInfo= VolleyErrorHelper.getMessage(error,loginActivity);
-                ToastUtils.showLong(loginActivity,errorInfo);
+                String errorInfo= VolleyErrorHelper.getMessage(error,taskDetailActivity);
+                ToastUtils.showLong(taskDetailActivity,errorInfo);
             }
 
             @Override
             public void onResponse(StipResponse response) {
-                loginView=loginActivity;
-                loginView.onResponse(response);
+                taskDetailView=taskDetailActivity;
+                taskDetailView.onResponse(response);
             }
         };
         Type type = new TypeToken<StipResponse>() {}.getType();
-        StipRequest<StipResponse> yr = new StipRequest<StipResponse>(ConstantUtils.POST,ConstantUtils.SERVER_ADDRESS+ConstantUtils.MCH_LOGIN_URL, type, params,responseListener);
+        StipRequest<StipResponse> yr = new StipRequest<StipResponse>(ConstantUtils.POST,ConstantUtils.SERVER_ADDRESS+ConstantUtils.DELETE_TASK_URL, type, params,responseListener);
         HttpUtils.addRequest(yr);
     }
 }

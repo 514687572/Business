@@ -1,4 +1,4 @@
-package com.stip.net.bean;
+package com.stip.net.base;
 
 import java.io.Serializable;
 
@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @author C
  *
  */
-public class StipResponse implements Serializable{
+public class StipResponse implements Serializable {
 	private boolean success;
 
 	public boolean isSuccess() {
