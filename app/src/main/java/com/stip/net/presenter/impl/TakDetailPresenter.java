@@ -3,20 +3,16 @@ package com.stip.net.presenter.impl;
 import com.android.volley.VolleyError;
 import com.google.gson.reflect.TypeToken;
 import com.stip.net.base.StipResponse;
-import com.stip.net.presenter.ILoginPresenter;
 import com.stip.net.presenter.ITaskDetailPresenter;
 import com.stip.net.utils.ConstantUtils;
 import com.stip.net.utils.HttpUtils;
 import com.stip.net.utils.StipRequest;
 import com.stip.net.utils.ToastUtils;
 import com.stip.net.utils.VolleyErrorHelper;
-import com.stip.net.view.ILoginView;
 import com.stip.net.view.ITaskDetailView;
-import com.stip.net.view.impl.LoginActivity;
 import com.stip.net.view.impl.TaskDetailActivity;
 
 import java.lang.reflect.Type;
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.inject.Inject;

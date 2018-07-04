@@ -14,10 +14,10 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-        android:name="com.stip.net.utils.ContextUtil"
+        android:name=".utils.ContextUtil"
         >
         <activity
-            android:name="com.stip.net.view.impl.LoginActivity"
+            android:name=".view.impl.LoginActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar"

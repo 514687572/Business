@@ -3,6 +3,7 @@ package com.stip.net.view.impl;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -16,10 +17,8 @@ import com.stip.net.bean.TaskResponse;
 import com.stip.net.presenter.impl.DaggerIndexComponent;
 import com.stip.net.presenter.impl.IndexPresenter;
 import com.stip.net.utils.ConstantUtils;
-import com.stip.net.utils.StringUtils;
 import com.stip.net.utils.ToastUtils;
 import com.stip.net.view.IIndexView;
-
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,7 +29,6 @@ import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import butterknife.OnClick;
 
 /**
  * 主页交互信息
@@ -43,6 +41,8 @@ public class IndexActivity extends Activity implements IIndexView {
 	ListView list;
 	@Inject
 	IndexPresenter indexPresenter;
+	//记录用户首次点击返回键的时间
+	private long firstTime = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -114,4 +114,19 @@ public class IndexActivity extends Activity implements IIndexView {
 		super.onDestroy();
 		ButterKnife.reset(this);
 	}
+
+	/**
+	 * 第三种方法
+	 */
+	@Override
+	public void onBackPressed() {
+		long secondTime = System.currentTimeMillis();
+		if (secondTime - firstTime > 2000) {
+			ToastUtils.showLong(IndexActivity.this, "再按一次退出程序");
+			firstTime = secondTime;
+		} else {
+			this.finish();
+		}
+	}
+
 }

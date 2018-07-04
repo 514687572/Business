@@ -2,6 +2,7 @@ package com.stip.net.view.impl;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.Button;
@@ -48,6 +49,19 @@ public class LoginActivity extends Activity implements ILoginView {
 		ButterKnife.inject(this);
 
 		DaggerLoginComponent.builder().build().inject(this);
+
+		SharedPreferences sharedPreferences=getSharedPreferences("config",0);
+		//取出数据，如果取出的数据时空时，只需把getString("","")第二个参数设置成空字符串就行了，不用在判断
+		String userName=sharedPreferences.getString("name","");
+		String password=sharedPreferences.getString("password","");
+
+		if(!userName.isEmpty()&&!password.isEmpty()){
+			HashMap<String, String> params=new HashMap<String, String>();
+			params.put("userName",userName);
+			params.put("password",password);
+
+			loginPresenter.login(this,params);
+		}
 	}
 	
 	/**
@@ -80,6 +94,18 @@ public class LoginActivity extends Activity implements ILoginView {
 			Intent intent = new Intent();
 			intent.setClass(LoginActivity.this,IndexActivity.class);
 			startActivity(intent);
+
+			//getSharedPreferences(name,model);,name 会生成一个xml文件，model ：模式，可读可写等模式
+			SharedPreferences sp=getSharedPreferences("config",0);
+			SharedPreferences.Editor editor=sp.edit();
+			//把数据进行保存
+
+			editor.putString("name",mch_Account.getText().toString());
+			editor.putString("password",mch_password.getText().toString());
+			//提交数据
+			editor.commit();
+
+			this.finish();
 		}else if(ConstantUtils.FAILURE_STATUS==response.isSuccess()){
 			ToastUtils.showLong(LoginActivity.this, "用户名或密码有误");
 		}

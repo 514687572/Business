@@ -6,6 +6,14 @@
     android:background="@drawable/mert_bg"
     >
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80px"
+        android:text="任务详情"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:background="@color/appmaincolor"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
